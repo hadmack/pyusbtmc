@@ -37,7 +37,7 @@ def getChannelData(channel):
     # Now, we know from experimentation that the scope display range is actually
     # 30-229.  So shift by 130 - the voltage offset in counts, then scale to
     # get the actual voltage.
-    data = (data - 130.0 - voltoffset/voltscale*25) / 25 * voltscale
+    data = (data - 130.0 - voltoffset/voltscale*25) / 25 * voltscale + voltoffset
 
     # Get the timescale
     test.write(":TIM:SCAL?")
